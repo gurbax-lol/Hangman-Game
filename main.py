@@ -6,16 +6,22 @@ import random
 import hangman_words
 import hangman_art
 
+print(hangman_art.logo)
+category = input("Pick a category: birds / movies / countries\n").lower()
+word_list = []
+if category == "birds":
+  word_list = hangman_words.birds
+elif category == "movies":
+  word_list = hangman_words.movies
+elif category == "countries":
+  word_list = hangman_words.countries
 
-word_list = hangman_words.word_list
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
 end_of_game = False
 lives = 6
 
-
-print(hangman_art.logo)
 #Testing code
 # print(f'Pssst, the solution is {chosen_word}.')
 
